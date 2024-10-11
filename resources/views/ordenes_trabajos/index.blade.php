@@ -63,6 +63,7 @@
             'Cantidad de colores',
             'Colores',
             'Tipo de pintura',
+            'Ubicación de estampados',
             'Tamaño',
             'Cantidad de estampados',
             'Cantidad de prendas',

@@ -28,7 +28,7 @@ class OrdenTrabajoController extends Controller
      */
     public function create()
     {
-        //
+        return view('ordenes_trabajos.create');
     }
 
     /**
