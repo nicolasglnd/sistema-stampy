@@ -13,7 +13,7 @@ class InventarioController extends Controller
      */
     public function index()
     {
-        return response()->json(Inventario::all(),200); //200 ok
+        return response()->json(Inventario::all(), 200); //200 ok
     }
 
     /**
@@ -23,7 +23,7 @@ class InventarioController extends Controller
     {
         $datos=$request->validate([
             'nombre'=>['required', 'string', 'max:70'],
-            'cantidad'=>['required', 'float'],
+            'cantidad'=>['required', 'numeric'],
             'medida'=>['required', 'string', 'max:20'],
         ]);
 
@@ -50,7 +50,7 @@ class InventarioController extends Controller
 
         $datos=$request->validate([
             'nombre'=>['required', 'string', 'max:70'],
-            'cantidad'=>['required', 'float'],
+            'cantidad'=>['required', 'numeric'],
             'medida'=>['required', 'string', 'max:20'],
         ]);
 
