@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Trabajos extends Model
+class PantallaSerigrafica extends Model
 {
-    /** @use HasFactory<\Database\Factories\TrabajosFactory> */
+    /** @use HasFactory<\Database\Factories\PantallasSerigraficasFactory> */
     use HasFactory;
 }

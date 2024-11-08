@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FacturasElectronicas extends Model
+class OrdenTrabajo extends Model
 {
-    /** @use HasFactory<\Database\Factories\FacturasElectronicasFactory> */
+    /** @use HasFactory<\Database\Factories\OrdenesTrabajoFactory> */
     use HasFactory;
+
+    protected $table = 'orden_trabajo';
 }

@@ -5,8 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CostosFinales extends Model
+class Usuario extends Model
 {
-    /** @use HasFactory<\Database\Factories\CostosFinalesFactory> */
+    /** @use HasFactory<\Database\Factories\UsuariosFactory> */
     use HasFactory;
+
+    protected $table = 'usuarios';
 }
