@@ -11,4 +11,15 @@ class FacturaElectronica extends Model
     use HasFactory;
     
     protected $table = 'factura_electronica';
+
+   protected $fillable = [
+        'ruta',
+        'id_cliente',
+        'numero_consecutivo',
+        'prefijo',
+    ];
+
+    public function cliente() {
+        return $this->belongsTo(Cliente::class, 'id_cliente');
+    }
 }

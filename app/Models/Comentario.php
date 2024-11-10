@@ -11,4 +11,18 @@ class Comentario extends Model
     use HasFactory;
 
     protected $table = 'comentarios';
+
+    protected $fillable = [
+        'mensaje',
+        'id_dashboard',
+        'id_usuario'
+    ];
+
+    public function dashboard() {
+        return $this->belongsTo(Dashboard::class, 'id_dashboard');
+    }
+
+    public function usuario() {
+        return $this->belongsTo(Usuario::class, 'id_usuario');
+    }
 }
