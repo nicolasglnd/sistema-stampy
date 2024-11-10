@@ -6,7 +6,7 @@
             <li><a href="" class="hover:underline">Quienes somos</a></li>
             <li class="relative">
                 <button id="menu-1-boton" class="hover:underline">Sistema de información</button>
-                <div id="menu-1" class="absolute hidden bg-white text-black mt-2 rounded shadow-lg w-48">
+                <div id="menu-1" class="absolute hidden bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Empleado</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Cliente</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Inventario</a>
@@ -18,7 +18,7 @@
             </li>
             <li class="relative">
                 <button id="menu-2-boton" class="hover:underline">información</button>
-                <div id="menu-2" class="absolute hidden bg-white text-black mt-2 rounded shadow-lg w-48">
+                <div id="menu-2" class="absolute hidden bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Documentación</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Tutoriales del sistema</a>
                 </div>
@@ -30,7 +30,7 @@
 
     <div id="config-container" class="relative">
         <img src="{{ asset('images/gear.svg') }}" alt="Configuración" id="config-boton" class="h-8 w-8 rounded-full cursor-pointer" />
-        <div id="config-menu" class="absolute hidden left-0 transform -translate-x-3/4 bg-white text-black mt-2 rounded shadow-lg w-40">
+        <div id="config-menu" class="absolute hidden left-0 transform -translate-x-3/4 bg-white text-black mt-2 rounded shadow-lg w-40 z-10">
             <a href="" class="block px-4 py-2 hover:bg-gray-200">Iniciar sesión</a>
             <a href="" class="block px-4 py-2 hover:bg-gray-200">Configuración</a>
             <a href="" class="block px-4 py-2 hover:bg-gray-200">Cerrar sesión</a>

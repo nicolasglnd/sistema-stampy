@@ -21,7 +21,7 @@ class InventarioController extends Controller
      */
     public function create()
     {
-        //
+        return view('inventarios.create');
     }
 
     /**
@@ -29,7 +29,8 @@ class InventarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Inventario::create($request->all());
+        return to_route('inventario.index')->with('info', 'Insumo de inventario creado con exito');
     }
 
     /**
@@ -45,7 +46,7 @@ class InventarioController extends Controller
      */
     public function edit(Inventario $inventario)
     {
-        //
+        return view('inventarios.edit', ['inventario' => $inventario]);
     }
 
     /**
@@ -53,7 +54,8 @@ class InventarioController extends Controller
      */
     public function update(Request $request, Inventario $inventario)
     {
-        //
+        $inventario->update($request->all());
+        return to_route('inventario.index')->with('info', 'Insumo de inventario actualizado con exito');
     }
 
     /**
@@ -61,6 +63,7 @@ class InventarioController extends Controller
      */
     public function destroy(Inventario $inventario)
     {
-        //
+        $inventario->delete();
+        return to_route('inventario.index')->with('info', 'Insumo de inventario eliminado con exito');
     }
 }
