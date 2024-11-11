@@ -7,9 +7,9 @@
             <li class="relative">
                 <button id="menu-1-boton" class="hover:underline">Sistema de información</button>
                 <div id="menu-1" class="absolute hidden bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
-                    <a href="" class="block px-4 py-2 hover:bg-gray-200">Empleado</a>
+                    <a href="{{ route('empleados.index') }}" class="block px-4 py-2 hover:bg-gray-200">Empleado</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Cliente</a>
-                    <a href="" class="block px-4 py-2 hover:bg-gray-200">Inventario</a>
+                    <a href="{{ route('inventario.index') }}" class="block px-4 py-2 hover:bg-gray-200">Inventario</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Pantalla serigrafica</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Orden de trabajo</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Factura Electronica</a>
