@@ -25,10 +25,10 @@
                     @endphp
                     <h2 class="card-title">{{ $nombreCompleto }}</h2>
                     <p><strong>ID: </strong><span>{{ $empleado->id }}</span></p>
-                    <p><strong>Primer Nombre: </strong><span>{{ $empleado->persona->primer_nombre }}</span></p>
-                    <p><strong>Segundo Nombre: </strong><span>{{ $empleado->persona->segundo_nombre }}</span></p>
-                    <p><strong>Primer Apellido: </strong><span>{{ $empleado->persona->primer_apellido }}</span></p>
-                    <p><strong>Segundo Apellido: </strong><span>{{ $empleado->persona->segundo_apellido }}</span></p>
+                    <p><strong>Primer Nombre: </strong><span>{{ $primerNombre }}</span></p>
+                    <p><strong>Segundo Nombre: </strong><span>{{ $segundoNombre }}</span></p>
+                    <p><strong>Primer Apellido: </strong><span>{{ $primerApellido }}</span></p>
+                    <p><strong>Segundo Apellido: </strong><span>{{ $segundoApellido }}</span></p>
                     <p><strong>Dirección: </strong><span>{{ $empleado->persona->direccion }}</span></p>
                     <p><strong>Telefono 1: </strong><span>{{ $empleado->persona->telefono_1 }}</span></p>
                     <p><strong>Telefono 2: </strong><span>{{ $empleado->persona->telefono_2 }}</span></p>
@@ -46,8 +46,8 @@
                     <p><strong>Fecha de nacimiento: </strong><span>{{ $empleado->fecha_nacimiento }}</span></p>
                     <p><strong>Fecha de Ingreso: </strong><span>{{ $empleado->fecha_ingreso }}</span></p>
                     <div class="card-actions justify-end">
-                        <a href="{{-- route('empleado.edit', $empleado->id) --}}" class="btn btn-outline btn-xs">Editar</a>
-                        <form action="{{-- route('empleado.destroy', $empleado->id) --}}" method="POST">
+                        <a href="{{ route('empleados.edit', $empleado->id) }}" class="btn btn-outline btn-xs">Editar</a>
+                        <form action="{{ route('empleados.destroy', $empleado->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline- btn-xs">Eliminar</button>

@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//cambie en update, edit y destroy parametro de empleados a empleado
 use App\Models\Empleado;
 use App\Models\Persona;
 use Illuminate\Http\Request;
 
-class EmpleadosController extends Controller
+class EmpleadoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -70,15 +70,15 @@ class EmpleadosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Empleados $empleados)
+    public function edit(Empleados $empleado)
     {
-        //
+        return view('empleados.edit', ['empleado' => $empleado]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empleados $empleados)
+    public function update(Request $request, Empleados $empleado)
     {
         //
     }
@@ -86,8 +86,13 @@ class EmpleadosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Empleados $empleados)
+    public function destroy(Empleados $empleado)
     {
-        //
+        $persona = $empleado->persona;
+        $empleado->delete();
+        if ($persona) {
+            $persona->delete();
+        }
+        return to_route('empleados.index')->with('info', 'Empleado eliminado con exito');
     }
 }
