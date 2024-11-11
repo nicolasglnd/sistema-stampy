@@ -7,3 +7,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/inventario', App\Http\Controllers\InventarioController::class);
+Route::resource('/empleados', App\Http\Controllers\EmpleadosController::class);

@@ -18,11 +18,10 @@ class Persona extends Model
         'primer_apellido',
         'segundo_apellido',
         'direccion',
-        'fecha_ingreso',
         'telefono_1',
         'telefono_2',
         'id_tipo_doc',
-        'documento_id',
+        'documento_id'
     ];
 
     public function empleado() {

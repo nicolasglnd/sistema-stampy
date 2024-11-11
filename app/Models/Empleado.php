@@ -14,16 +14,17 @@ class Empleado extends Model
 
     protected $fillable = [
         'id',
-        'eps',
-        'activo',
+        'id_rol',
+        'email',
         'logro_academico',
+        'activo',
+        'salario',
+        'eps',
         'arl',
         'caja_compensacion',
         'fondo_pension',
-        'salario',
-        'id_rol',
-        'email',
         'fecha_nacimiento',
+        'fecha_ingreso',
     ];
 
     public function persona() {
