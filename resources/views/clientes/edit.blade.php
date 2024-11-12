@@ -7,7 +7,7 @@
     <div class="flex justify-center">
         <div class="card w-96 shadow-2xl bg-base-100">
             <div class="card-body">
-                <form action="{{ route('empleados.update', $empleado->id) }}" method="POST">
+                <form action="{{ route('empleado.update', $empleado->id) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-control">
@@ -129,27 +129,9 @@
                         </label>
                         <input type="text" name="caja_compensacion" placeholder="Caja de Compensación" maxlength="255" class="input input-bordered" value="{{ $empleado->caja_compensacion }}" required />
                     </div>
-                    <div class="form-control">
-                        <label class="label" for="fondo_pension">
-                            <span class="label-text">Fondo de Pensión</span>
-                        </label>
-                        <input type="text" name="fondo_pension" placeholder="Fondo de Pensión" maxlength="255" class="input input-bordered" value="{{ $empleado->fondo_pension }}" required />
-                    </div>
-                    <div class="form-control">
-                        <label class="label" for="fecha_nacimiento">
-                            <span class="label-text">Fecha de Nacimiento</span>
-                        </label>
-                        <input type="text" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" maxlength="255" class="input input-bordered" value="{{ $empleado->fecha_nacimiento }}" required />
-                    </div>
-                    <div class="form-control">
-                        <label class="label" for="fecha_ingreso">
-                            <span class="label-text">Fecha de Ingreso</span>
-                        </label>
-                        <input type="text" name="fecha_ingreso" placeholder="Fecha de Ingreso" maxlength="255" class="input input-bordered" value="{{ $empleado->fecha_ingreso }}" required />
-                    </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Actualizar Empleado</button>
-                        <a href="{{ route('empleados.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
+                        <button class="btn btn-primary">Actualizar Insumo</button>
+                        <a href="{{ route('empleado.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
                     </div>
                 </form>
             </div>

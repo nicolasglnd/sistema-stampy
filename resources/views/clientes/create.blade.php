@@ -1,38 +1,38 @@
 @extends('layouts.app')
-@section('titulo', 'Editar Empleado')
-@section('cabecera', 'Editar Empleado ' . $empleado->nombre)
 
-@section('contenido')
+@section('titulo', 'Crear Empleado')
+@section('cabecera', 'Crear Empleado')
+
+@section('contenido') 
 
     <div class="flex justify-center">
         <div class="card w-96 shadow-2xl bg-base-100">
             <div class="card-body">
-                <form action="{{ route('empleados.update', $empleado->id) }}" method="POST">
+                <form action="{{ route('empleados.store') }}" method="POST">
                     @csrf
-                    @method('PUT')
                     <div class="form-control">
 	                    <label class="label" for="primer_nombre">
 	                        <span class="label-text">Primer Nombre</span>
 	                    </label>
-	                    <input type="text" name="primer_nombre" placeholder="Primer Nombre" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->primer_nombre }}" required />
+	                    <input type="text" name="primer_nombre" placeholder="Primer Nombre" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="segundo_nombre">
 	                        <span class="label-text">Segundo Nombre</span>
 	                    </label>
-	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->segundo_nombre }}" required />
+	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="primer_apellido">
 	                        <span class="label-text">Primer Apellido</span>
 	                    </label>
-	                    <input type="text" name="primer_apellido" placeholder="Primer Apellido" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->primer_apellido }}" required />
+	                    <input type="text" name="primer_apellido" placeholder="Primer Apellido" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="segundo_apellido">
 	                        <span class="label-text">Segundo Apellido</span>
 	                    </label>
-	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->segundo_apellido }}" required />
+	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label" for="id_tipo_doc">
@@ -51,25 +51,25 @@
 	                    <label class="label" for="documento_id">
 	                        <span class="label-text">Documento de Identificación</span>
 	                    </label>
-	                    <input type="text" name="documento_id" placeholder="Documento de Identificación" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->documento_id }}" required />
+	                    <input type="text" name="documento_id" placeholder="Documento de Identificación" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="telefono_1">
 	                        <span class="label-text">Telefono 1</span>
 	                    </label>
-	                    <input type="number" name="telefono_1" placeholder="Telefono 1" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->telefono_1 }}" required />
+	                    <input type="number" name="telefono_1" placeholder="Telefono 1" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="telefono_2">
 	                        <span class="label-text">Telefono 2</span>
 	                    </label>
-	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->telefono_2 }}" required />
+	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="direccion">
 	                        <span class="label-text">Dirección</span>
 	                    </label>
-	                    <input type="text" name="direccion" placeholder="Dirección" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->direccion }}" required />
+	                    <input type="text" name="direccion" placeholder="Dirección" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label" for="id_rol">
@@ -87,13 +87,13 @@
 	                    <label class="label" for="email">
 	                        <span class="label-text">Correo Electronico</span>
 	                    </label>
-	                    <input type="text" name="email" placeholder="Correo Electronico" maxlength="100" class="input input-bordered" value="{{ $empleado->email }}" required />
+	                    <input type="text" name="email" placeholder="Correo Electronico" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="logro_academico">
 	                        <span class="label-text">Logro Academico</span>
 	                    </label>
-	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" value="{{ $empleado->logro_academico }}" required />
+	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label" for="activo">
@@ -109,46 +109,47 @@
 	                    <label class="label" for="salario">
 	                        <span class="label-text">Salario</span>
 	                    </label>
-	                    <input type="number" name="salario" placeholder="Salario" maxlength="100" class="input input-bordered" value="{{ $empleado->salario }}" required />
+	                    <input type="number" name="salario" placeholder="Salario" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="eps">
 	                        <span class="label-text">EPS</span>
 	                    </label>
-	                    <input type="text" name="eps" placeholder="EPS" maxlength="100" class="input input-bordered" value="{{ $empleado->eps }}" required />
+	                    <input type="text" name="eps" placeholder="EPS" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label" for="arl">
                             <span class="label-text">ARL</span>
                         </label>
-                        <input type="text" name="arl" placeholder="ARL" maxlength="255" class="input input-bordered" value="{{ $empleado->arl }}" required />
+                        <input type="text" name="arl" placeholder="ARL" maxlength="255" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="caja_compensacion">
                             <span class="label-text">Caja de Compensación</span>
                         </label>
-                        <input type="text" name="caja_compensacion" placeholder="Caja de Compensación" maxlength="255" class="input input-bordered" value="{{ $empleado->caja_compensacion }}" required />
+                        <input type="text" name="caja_compensacion" placeholder="Caja de Compensación" maxlength="255" class="input input-bordered" />
                     </div>
+
                     <div class="form-control">
                         <label class="label" for="fondo_pension">
                             <span class="label-text">Fondo de Pensión</span>
                         </label>
-                        <input type="text" name="fondo_pension" placeholder="Fondo de Pensión" maxlength="255" class="input input-bordered" value="{{ $empleado->fondo_pension }}" required />
+                        <input type="text" name="fondo_pension" placeholder="Fondo de Pensión" maxlength="255" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="fecha_nacimiento">
                             <span class="label-text">Fecha de Nacimiento</span>
                         </label>
-                        <input type="text" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" maxlength="255" class="input input-bordered" value="{{ $empleado->fecha_nacimiento }}" required />
+                        <input type="date" name="fecha_nacimiento" maxlength="255" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="fecha_ingreso">
                             <span class="label-text">Fecha de Ingreso</span>
                         </label>
-                        <input type="text" name="fecha_ingreso" placeholder="Fecha de Ingreso" maxlength="255" class="input input-bordered" value="{{ $empleado->fecha_ingreso }}" required />
+                        <input type="date" name="fecha_ingreso" maxlength="255" class="input input-bordered" />
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Actualizar Empleado</button>
+                        <button class="btn btn-primary">Crear Empleado</button>
                         <a href="{{ route('empleados.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
                     </div>
                 </form>

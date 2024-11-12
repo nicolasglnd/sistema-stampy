@@ -33,6 +33,6 @@ class Persona extends Model
     }
 
     public function tipoDocumento() {
-        return $this->belongsTo(tipoDocumento::class, 'id_tipo_doc');
+        return $this->belongsTo(TipoDocumento::class, 'id_tipo_doc');
     }
 }

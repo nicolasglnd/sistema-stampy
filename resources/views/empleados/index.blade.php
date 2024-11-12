@@ -32,7 +32,7 @@
                     <p><strong>Dirección: </strong><span>{{ $empleado->persona->direccion }}</span></p>
                     <p><strong>Telefono 1: </strong><span>{{ $empleado->persona->telefono_1 }}</span></p>
                     <p><strong>Telefono 2: </strong><span>{{ $empleado->persona->telefono_2 }}</span></p>
-                    <p><strong>ID tipo Documento: </strong><span>{{ $empleado->persona->id_tipo_doc }}</span></p>
+                    <p><strong>Tipo de Documento: </strong><span>{{ $empleado->persona->tipoDocumento->tipo_documento }}</span></p>
                     <p><strong>Documento de Identificación: </strong><span>{{ $empleado->persona->documento_id }}</span></p>
                     <p><strong>EPS: </strong><span>{{ $empleado->eps }}</span></p>
                     <p><strong>Activo: </strong><span>{{ $empleado->activo ? 'Si' : 'No' }}</span></p>
