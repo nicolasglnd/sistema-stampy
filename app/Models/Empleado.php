@@ -35,7 +35,7 @@ class Empleado extends Model
         return $this->belongsTo(Rol::class, 'id_rol');
     }
 
-    public function usuario() {
-        return $this->hasOne(Usuario::class, 'id');
+    public function user() {
+        return $this->hasOne(User::class, 'id');
     }
 }

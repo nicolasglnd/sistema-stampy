@@ -10,7 +10,7 @@ class Dashboard extends Model
     /** @use HasFactory<\Database\Factories\DashboardFactory> */
     use HasFactory;
 
-    protected $table = 'dashboard';
+    protected $table = 'dashboards';
 
     protected $fillable = [
         'id',

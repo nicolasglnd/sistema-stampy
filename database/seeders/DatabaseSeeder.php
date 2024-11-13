@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Inventario;
+use App\Models\Persona;
+use App\Models\Empleado;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +16,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        for ($i = 0; $i < 3; $i++) {
+            $persona = Persona::factory()->create();
+            Empleado::factory()->create(['id' => $persona->id]);
+            User::factory()->create(['id' => $persona->id]);
+        }
 
-        User::factory()->create([
-            'name' => 'Test User',
+        /*User::factory()->create([
+            'name' => 'Administrador',
             'email' => 'test@example.com',
-        ]);
+        ]);*/
     }
 }

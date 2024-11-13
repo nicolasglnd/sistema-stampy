@@ -26,7 +26,7 @@ class PantallaSerigrafica extends Model
         return $this->belongsTo(OrdenTrabajo::class, 'id_orden_trabajo');
     }
 
-    public function usuario() {
-        return $this->belongsTo(Usuario::class, 'idusuario');
+    public function user() {
+        return $this->belongsTo(User::class, 'id_usuario');
     }
 }

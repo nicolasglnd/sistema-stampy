@@ -1,14 +1,25 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\InventarioController;
 
-Route::get('/', function () {
+
+Route::view('/','welcome')->name('home');
+
+Route::resource('/inventario', InventarioController::class)->middleware('auth');
+Route::resource('/empleados', EmpleadoController::class)->middleware('auth');
+
+Route::get('/dashboard', function () {
     return view('welcome');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('/inventario', InventarioController::class);
-Route::resource('/empleados', EmpleadoController::class);
-//Route::delete('/empleados/{id}', [EmpleadosController::class, 'destroy'])->name('empleados.destroy');
-
+require __DIR__.'/auth.php';

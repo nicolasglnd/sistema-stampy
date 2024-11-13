@@ -1,7 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.w-small {
-    width: 4.5rem;
-}

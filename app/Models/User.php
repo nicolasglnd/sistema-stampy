@@ -18,10 +18,19 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
     ];
+
+    public $incrementing = false;
+    protected $keyType = 'unsignedBigInteger';
+
+    // Relación con Empleado
+    public function empleado() {
+        return $this->belongsTo(Empleado::class, 'id'); 
+    }
 
     /**
      * The attributes that should be hidden for serialization.
