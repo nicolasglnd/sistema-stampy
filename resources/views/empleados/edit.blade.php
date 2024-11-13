@@ -20,7 +20,7 @@
 	                    <label class="label" for="segundo_nombre">
 	                        <span class="label-text">Segundo Nombre</span>
 	                    </label>
-	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->segundo_nombre }}" required />
+	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->segundo_nombre }}" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="primer_apellido">
@@ -32,7 +32,7 @@
 	                    <label class="label" for="segundo_apellido">
 	                        <span class="label-text">Segundo Apellido</span>
 	                    </label>
-	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->segundo_apellido }}" required />
+	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->segundo_apellido }}" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="id_tipo_doc">
@@ -63,7 +63,7 @@
 	                    <label class="label" for="telefono_2">
 	                        <span class="label-text">Telefono 2</span>
 	                    </label>
-	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->telefono_2 }}" required />
+	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" value="{{ $empleado->persona->telefono_2 }}" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="direccion">
@@ -93,7 +93,7 @@
 	                    <label class="label" for="logro_academico">
 	                        <span class="label-text">Logro Academico</span>
 	                    </label>
-	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" value="{{ $empleado->logro_academico }}" required />
+	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" value="{{ $empleado->logro_academico }}" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="activo">
@@ -127,7 +127,7 @@
                         <label class="label" for="caja_compensacion">
                             <span class="label-text">Caja de Compensación</span>
                         </label>
-                        <input type="text" name="caja_compensacion" placeholder="Caja de Compensación" maxlength="255" class="input input-bordered" value="{{ $empleado->caja_compensacion }}" required />
+                        <input type="text" name="caja_compensacion" placeholder="Caja de Compensación" maxlength="255" class="input input-bordered" value="{{ $empleado->caja_compensacion }}" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="fondo_pension">

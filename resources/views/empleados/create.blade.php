@@ -20,7 +20,7 @@
 	                    <label class="label" for="segundo_nombre">
 	                        <span class="label-text">Segundo Nombre</span>
 	                    </label>
-	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" required />
+	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="primer_apellido">
@@ -32,7 +32,7 @@
 	                    <label class="label" for="segundo_apellido">
 	                        <span class="label-text">Segundo Apellido</span>
 	                    </label>
-	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" required />
+	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="id_tipo_doc">
@@ -63,7 +63,7 @@
 	                    <label class="label" for="telefono_2">
 	                        <span class="label-text">Telefono 2</span>
 	                    </label>
-	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" required />
+	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="direccion">
@@ -93,7 +93,7 @@
 	                    <label class="label" for="logro_academico">
 	                        <span class="label-text">Logro Academico</span>
 	                    </label>
-	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" required />
+	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="activo">
@@ -121,7 +121,7 @@
                         <label class="label" for="arl">
                             <span class="label-text">ARL</span>
                         </label>
-                        <input type="text" name="arl" placeholder="ARL" maxlength="255" class="input input-bordered" />
+                        <input type="text" name="arl" placeholder="ARL" maxlength="255" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label" for="caja_compensacion">
@@ -134,19 +134,19 @@
                         <label class="label" for="fondo_pension">
                             <span class="label-text">Fondo de Pensión</span>
                         </label>
-                        <input type="text" name="fondo_pension" placeholder="Fondo de Pensión" maxlength="255" class="input input-bordered" />
+                        <input type="text" name="fondo_pension" placeholder="Fondo de Pensión" maxlength="255" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
                         <label class="label" for="fecha_nacimiento">
                             <span class="label-text">Fecha de Nacimiento</span>
                         </label>
-                        <input type="date" name="fecha_nacimiento" maxlength="255" class="input input-bordered" />
+                        <input type="date" name="fecha_nacimiento" maxlength="255" class="input input-bordered"  required/>
                     </div>
                     <div class="form-control">
                         <label class="label" for="fecha_ingreso">
                             <span class="label-text">Fecha de Ingreso</span>
                         </label>
-                        <input type="date" name="fecha_ingreso" maxlength="255" class="input input-bordered" />
+                        <input type="date" name="fecha_ingreso" maxlength="255" class="input input-bordered"  required/>
                     </div>
                     <div class="form-control mt-6">
                         <button class="btn btn-primary">Crear Empleado</button>
