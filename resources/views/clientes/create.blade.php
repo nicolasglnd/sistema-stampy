@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('titulo', 'Crear Empleado')
-@section('cabecera', 'Crear Empleado')
+@section('titulo', 'Crear Cliente')
+@section('cabecera', 'Crear Cliente')
 
 @section('contenido') 
 
@@ -20,7 +20,7 @@
 	                    <label class="label" for="segundo_nombre">
 	                        <span class="label-text">Segundo Nombre</span>
 	                    </label>
-	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" required />
+	                    <input type="text" name="segundo_nombre" placeholder="Segundo Nombre" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="primer_apellido">
@@ -32,7 +32,7 @@
 	                    <label class="label" for="segundo_apellido">
 	                        <span class="label-text">Segundo Apellido</span>
 	                    </label>
-	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" required />
+	                    <input type="text" name="segundo_apellido" placeholder="Segundo Apellido" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
                         <label class="label" for="id_tipo_doc">
@@ -63,7 +63,7 @@
 	                    <label class="label" for="telefono_2">
 	                        <span class="label-text">Telefono 2</span>
 	                    </label>
-	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" required />
+	                    <input type="number" name="telefono_2" placeholder="Telefono 2" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="direccion">
@@ -72,85 +72,27 @@
 	                    <input type="text" name="direccion" placeholder="Dirección" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
-                        <label class="label" for="id_rol">
-                            <span class="label-text">Rol</span>
-                        </label>
-                        <select name="id_rol" class="input input-bordered" required>
-                            <option value="" disabled selected>Selecciona un rol</option>
-                            <option value="1">Administrador</option>
-                            <option value="2">Estampador</option>
-                            <option value="3">Diseñador Grafico</option>
-                            <option value="4">Vendedor</option>
-                        </select>
-                    </div>
-                    <div class="form-control">
-	                    <label class="label" for="email">
-	                        <span class="label-text">Correo Electronico</span>
+	                    <label class="label" for="email_entidad">
+	                        <span class="label-text">Correo Electronico de la Entidad</span>
 	                    </label>
-	                    <input type="text" name="email" placeholder="Correo Electronico" maxlength="100" class="input input-bordered" required />
+	                    <input type="email" name="email_entidad" placeholder="Correo Electronico" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
-	                    <label class="label" for="logro_academico">
-	                        <span class="label-text">Logro Academico</span>
+	                    <label class="label" for="email_responsable">
+	                        <span class="label-text">Correo Electronico del responsable</span>
 	                    </label>
-	                    <input type="text" name="logro_academico" placeholder="Logro Academico" maxlength="100" class="input input-bordered" required />
+	                    <input type="email" name="email_responsable" placeholder="Correo Electronico" maxlength="100" class="input input-bordered" required />
                     </div>
                     <div class="form-control">
-                        <label class="label" for="activo">
-                            <span class="label-text">¿El empleado esta activo?</span>
-                        </label>
-                        <select name="activo" class="input input-bordered" required>
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="1">Si</option>
-                            <option value="0">No</option>
-                        </select>
-                    </div>
-                    <div class="form-control">
-	                    <label class="label" for="salario">
-	                        <span class="label-text">Salario</span>
+	                    <label class="label" for="telefono_responsable">
+	                        <span class="label-text">Telefono Reponsable</span>
 	                    </label>
-	                    <input type="number" name="salario" placeholder="Salario" maxlength="100" class="input input-bordered" required />
-                    </div>
-                    <div class="form-control">
-	                    <label class="label" for="eps">
-	                        <span class="label-text">EPS</span>
-	                    </label>
-	                    <input type="text" name="eps" placeholder="EPS" maxlength="100" class="input input-bordered" required />
-                    </div>
-                    <div class="form-control">
-                        <label class="label" for="arl">
-                            <span class="label-text">ARL</span>
-                        </label>
-                        <input type="text" name="arl" placeholder="ARL" maxlength="255" class="input input-bordered" />
-                    </div>
-                    <div class="form-control">
-                        <label class="label" for="caja_compensacion">
-                            <span class="label-text">Caja de Compensación</span>
-                        </label>
-                        <input type="text" name="caja_compensacion" placeholder="Caja de Compensación" maxlength="255" class="input input-bordered" />
+	                    <input type="number" name="telefono_responsable" placeholder="Telefono Reponsable" maxlength="100" class="input input-bordered" required />
                     </div>
 
-                    <div class="form-control">
-                        <label class="label" for="fondo_pension">
-                            <span class="label-text">Fondo de Pensión</span>
-                        </label>
-                        <input type="text" name="fondo_pension" placeholder="Fondo de Pensión" maxlength="255" class="input input-bordered" />
-                    </div>
-                    <div class="form-control">
-                        <label class="label" for="fecha_nacimiento">
-                            <span class="label-text">Fecha de Nacimiento</span>
-                        </label>
-                        <input type="date" name="fecha_nacimiento" maxlength="255" class="input input-bordered" />
-                    </div>
-                    <div class="form-control">
-                        <label class="label" for="fecha_ingreso">
-                            <span class="label-text">Fecha de Ingreso</span>
-                        </label>
-                        <input type="date" name="fecha_ingreso" maxlength="255" class="input input-bordered" />
-                    </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary">Crear Empleado</button>
-                        <a href="{{ route('empleados.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
+                        <button class="btn btn-primary">Crear Cliente</button>
+                        <a href="{{ route('clientes.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
                     </div>
                 </form>
             </div>

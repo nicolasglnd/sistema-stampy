@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulo', 'Pagina Principal')
+@section('titulo', 'Clientes')
 @section('cabecera', 'clientes')
 
 @section('contenido')
@@ -30,12 +30,12 @@
                     <p><strong>Segundo Nombre: </strong><span>{{ $segundoNombre }}</span></p>
                     <p><strong>Primer Apellido: </strong><span>{{ $primerApellido }}</span></p>
                     <p><strong>Segundo Apellido: </strong><span>{{ $segundoApellido }}</span></p>
+                    <p><strong>Entidad: </strong><span>{{ $cliente->entidad }}</span></p>
                     <p><strong>Dirección: </strong><span>{{ $cliente->persona->direccion }}</span></p>
                     <p><strong>Telefono 1: </strong><span>{{ $cliente->persona->telefono_1 }}</span></p>
                     <p><strong>Telefono 2: </strong><span>{{ $cliente->persona->telefono_2 }}</span></p>
                     <p><strong>ID tipo Documento: </strong><span>{{ $cliente->persona->id_tipo_doc }}</span></p>
                     <p><strong>Documento de Identificación: </strong><span>{{ $cliente->persona->documento_id }}</span></p>
-                    <p><strong>Entidad: </strong><span>{{ $cliente->entidad }}</span></p>
                     <p><strong>¿El cliente debe algo?: </strong><span>{{ $cliente->debe ? 'Si' : 'No' }}</span></p>
                     <p><strong>Credito Contable: </strong><span>{{ $cliente->credito_contable }}</span></p>
                     <p><strong>Email de la Entidad: </strong><span>{{ $cliente->email_entidad }}</span></p>

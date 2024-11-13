@@ -15,8 +15,8 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->unsignedBigInteger('id'); // Crea una columna 'id' sin auto increment
             $table->string('entidad', 60)->nullable();
-            $table->decimal('debe', 10, 2);
-            $table->boolean('credito_contable');
+            $table->decimal('debe', 10, 2)->default(0);
+            $table->boolean('credito_contable')->default(true);
             $table->string('email_entidad', 50);
             $table->string('email_responsable', 50);
             $table->string('telefono_responsable', 25);
