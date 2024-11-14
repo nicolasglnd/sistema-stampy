@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 3; $i++) {
+        for ($i = 0; $i < 7; $i++) {
             $persona = Persona::factory()->create();
             Empleado::factory()->create(['id' => $persona->id]);
             User::factory()->create(['id' => $persona->id]);
