@@ -24,7 +24,7 @@
 
     {{-- menu desktop --}}
     <div class="flex-1"></div>
-    <nav class="relative">
+    <nav class="relative hidden md:block">
         <ul class="flex space-x-4">
             <li><a href="" class="hover:underline">Inicio</a></li>
             <li><a href="" class="hover:underline">Quienes somos</a></li>
