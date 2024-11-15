@@ -14,7 +14,7 @@
 	                    <label class="label" for="entidad">
 	                        <span class="label-text">Entidad</span>
 	                    </label>
-	                    <input type="text" name="entidad" placeholder="Escribe la entidad" maxlength="100" class="input input-bordered" required />
+	                    <input type="text" name="entidad" placeholder="Escribe la entidad" maxlength="100" class="input input-bordered" />
                     </div>
                     <div class="form-control">
 	                    <label class="label" for="primer_nombre">

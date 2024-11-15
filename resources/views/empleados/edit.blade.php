@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('titulo', 'Editar Empleado')
-@section('cabecera', 'Editar Empleado ' . $empleado->nombre)
+
+@php
+    $primerNombre = $empleado->persona->primer_nombre;
+    $segundoNombre = $empleado->persona->segundo_nombre;
+    $primerApellido = $empleado->persona->primer_apellido;
+    $segundoApellido = $empleado->persona->segundo_apellido;
+    $nombreCompleto = $primerNombre . " " . $segundoNombre . " " . $primerApellido . " " . $segundoApellido;
+@endphp
+
+@section('cabecera', 'Editar Empleado ' . $nombreCompleto)
 
 @section('contenido')
 
