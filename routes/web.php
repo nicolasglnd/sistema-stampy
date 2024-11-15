@@ -5,12 +5,14 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\ClienteController;
 
 
 Route::view('/','welcome')->name('home');
 
 Route::resource('/inventario', InventarioController::class)->middleware('auth');
 Route::resource('/empleados', EmpleadoController::class)->middleware('auth');
+Route::resource('/clientes', ClienteController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('welcome');

@@ -56,7 +56,7 @@ class EmpleadoController extends Controller
             'fecha_ingreso' => $request-> fecha_ingreso
         ]);
 
-        return to_route('empleados.index')->with('info', 'Empleado creado con exito');
+        return redirect()->route('empleados.index')->with('info', 'Empleado creado con exito');
     }
 
     /**
@@ -146,6 +146,6 @@ class EmpleadoController extends Controller
         if ($persona) {
             $persona->delete();
         }
-        return to_route('empleados.index')->with('info', 'Empleado eliminado con exito');
+        return redirect()->route('empleados.index')->with('info', 'Empleado eliminado con exito');
     }
 }

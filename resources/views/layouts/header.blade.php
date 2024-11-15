@@ -26,13 +26,13 @@
     <div class="flex-1"></div>
     <nav class="relative hidden md:block">
         <ul class="flex space-x-4">
-            <li><a href="" class="hover:underline">Inicio</a></li>
+            <li><a href="{{route ('home') }}" class="hover:underline">Inicio</a></li>
             <li><a href="" class="hover:underline">Quienes somos</a></li>
             <li class="relative">
                 <button id="menu-1-boton" class="hover:underline">Sistema de información</button>
                 <div id="menu-1" class="absolute hidden bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
                     <a href="{{ route('empleados.index') }}" class="block px-4 py-2 hover:bg-gray-200">Empleado</a>
-                    <a href="" class="block px-4 py-2 hover:bg-gray-200">Cliente</a>
+                    <a href="{{ route('clientes.index') }}" class="block px-4 py-2 hover:bg-gray-200">Cliente</a>
                     <a href="{{ route('inventario.index') }}" class="block px-4 py-2 hover:bg-gray-200">Inventario</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Pantalla serigrafica</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Orden de trabajo</a>

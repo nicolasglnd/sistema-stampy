@@ -8,8 +8,14 @@
     <div class="flex justify-center">
         <div class="card w-96 shadow-2xl bg-base-100">
             <div class="card-body">
-                <form action="{{ route('empleados.store') }}" method="POST">
+                <form action="{{ route('clientes.store') }}" method="POST">
                     @csrf
+                    <div class="form-control">
+	                    <label class="label" for="entidad">
+	                        <span class="label-text">Entidad</span>
+	                    </label>
+	                    <input type="text" name="entidad" placeholder="Escribe la entidad" maxlength="100" class="input input-bordered" required />
+                    </div>
                     <div class="form-control">
 	                    <label class="label" for="primer_nombre">
 	                        <span class="label-text">Primer Nombre</span>
