@@ -9,8 +9,8 @@
             <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                 <li><a href="{{ route('home') }}">Inicio</a></li>
                 <li><a href="{{-- route('home') --}}">Quienes somos</a></li>
-                <li><a href="{{-- route('empleados.index') --}}">Empleado</a></li>
-                <li><a href="{{-- route('clientes.index') --}}">Cliente</a></li>
+                <li><a href="{{ route('empleados.index') }}">Empleado</a></li>
+                <li><a href="{{ route('clientes.index') }}">Cliente</a></li>
                 <li><a href="{{-- route('pantallas.index') --}}">Pantalla seigrafica</a></li>
                 <li><a href="{{-- route('ordenes.index') --}}">Orden de trabajo</a></li>
                 <li><a href="{{-- route('facturas.index') --}}">Factura Electronica</a></li>
@@ -35,7 +35,7 @@
                     <a href="{{ route('clientes.index') }}" class="block px-4 py-2 hover:bg-gray-200">Cliente</a>
                     <a href="{{ route('inventario.index') }}" class="block px-4 py-2 hover:bg-gray-200">Inventario</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Pantalla serigrafica</a>
-                    <a href="" class="block px-4 py-2 hover:bg-gray-200">Orden de trabajo</a>
+                    <a href="{{ route('ordenestrabajos.index') }}" class="block px-4 py-2 hover:bg-gray-200">Orden de trabajo</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Factura Electronica</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Costos finales</a>
                 </div>

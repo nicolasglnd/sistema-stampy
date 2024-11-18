@@ -10,7 +10,7 @@ class OrdenTrabajo extends Model
     /** @use HasFactory<\Database\Factories\OrdenesTrabajoFactory> */
     use HasFactory;
 
-    protected $table = 'orden_trabajo';
+    protected $table = 'ordenes_trabajos';
 
     protected $fillable = [
         'total_cantidad_estampados',
@@ -25,6 +25,10 @@ class OrdenTrabajo extends Model
 
     public function costoFinal() {
         return $this->hasOne(CostoFinal::class, 'id');
+    }
+
+    public function trabajos() {
+        return $this->hasMany(Trabajo::class, 'id_orden_trabajo');
     }
 
 

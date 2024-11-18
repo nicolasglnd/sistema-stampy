@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\OrdenesTrabajo;
+use App\Models\OrdenTrabajo;
 use Illuminate\Http\Request;
 
-class OrdenesTrabajoController extends Controller
+class OrdenTrabajoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $ordenes = OrdenTrabajo::with('trabajos')->get();
+        return view('ordenes_trabajos.index', compact('ordenes'));
+    }
+
+    //nuevo metodo
+    public function trabajos($id)
+    {
+        $trabajos = OrdenTrabajo::findOrFail($id)->trabajos;
+        return response()->json($trabajos);
     }
 
     /**
@@ -34,7 +42,7 @@ class OrdenesTrabajoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OrdenesTrabajo $ordenesTrabajo)
+    public function show(OrdenTrabajo $ordenTrabajo)
     {
         //
     }
@@ -42,7 +50,7 @@ class OrdenesTrabajoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OrdenesTrabajo $ordenesTrabajo)
+    public function edit(OrdenTrabajo $ordenTrabajo)
     {
         //
     }
@@ -50,7 +58,7 @@ class OrdenesTrabajoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OrdenesTrabajo $ordenesTrabajo)
+    public function update(Request $request, OrdenTrabajo $ordenTrabajo)
     {
         //
     }
@@ -58,7 +66,7 @@ class OrdenesTrabajoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OrdenesTrabajo $ordenesTrabajo)
+    public function destroy(OrdenTrabajo $ordenTrabajo)
     {
         //
     }
