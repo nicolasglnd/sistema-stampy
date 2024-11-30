@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('titulo', 'Crear Insumo')
-@section('cabecera', 'Crear Insumo')
+@section('titulo', 'Crear Orden de Trabajo')
+@section('cabecera', 'Crear Orden de Trabajo')
 
 @section('contenido') 
 
@@ -23,6 +23,28 @@
                             </label>
                             <input type="number" name="total_cantidad_prendas" placeholder="Total de prendas" class="input input-bordered" required />
                         </div>
+
+                        <div class="form-control">
+                            <label class="label" for="id_cliente">
+                                <span class="label-text">Selecciona un cliente</span>
+                            </label>
+                            <select name="id_cliente" class="input input-bordered">
+                                    <option value="" disabled selected>Seleccionar cliente</option>
+                                @foreach($clientes as $cliente)
+                                    @php
+                                        $primerNombre = $cliente->persona->primer_nombre;
+                                        $segundoNombre = $cliente->persona->segundo_nombre;
+                                        $primerApellido = $cliente->persona->primer_apellido;
+                                        $segundoApellido = $cliente->persona->segundo_apellido;
+                                        $nombreCompleto = $primerNombre . " " . $segundoNombre . " " . $primerApellido . " " . $segundoApellido;
+                                        $titulo = $cliente->entidad ? $cliente->entidad : $nombreCompleto;
+                                        $clienteId = $cliente->id;
+                                    @endphp
+                                    <option value="{{ $clienteId }}">{{ $clienteId . ' - ' . $titulo }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-control">
                             <label class="label" for="descripcion">
                                 <span class="label-text">Descripción</span>
@@ -35,72 +57,72 @@
                         <div class="trabajo">
                             <h2 class="text-center font-semibold m-4 uppercase">Trabajo 1</h2>
                             <div class="form-control">
-                                <label class="label" for="logotipo">
+                                <label class="label" for="trabajos[0][logotipo]">
                                     <span class="label-text">Logotipo</span>
                                 </label>
-                                <input type="text" name="logotipo" placeholder="Escriba el logotipo" maxlength="255" class="input input-bordered" />
+                                <input type="text" name="trabajos[0][logotipo]" placeholder="Escriba el logotipo" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="cantidad_colores">
+                                <label class="label" for="trabajos[0][cantidad_colores]">
                                     <span class="label-text">Cantidas de colores</span>
                                 </label>
-                                <input type="number" name="cantidad_colores" placeholder="cantida de colores" maxlength="255" class="input input-bordered" />
+                                <input type="number" name="trabajos[0][cantidad_colores]" placeholder="cantida de colores" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="colores">
+                                <label class="label" for="trabajos[0][colores]">
                                     <span class="label-text">Colores (separelos con una coma (,))</span>
                                 </label>
-                                <input type="text" name="colores" placeholder="Escriba los colores " maxlength="255" class="input input-bordered" />
+                                <input type="text" name="trabajos[0][colores]" placeholder="Escriba los colores " maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="tipo_pintura">
+                                <label class="label" for="trabajos[0][tipo_pintura]">
                                     <span class="label-text">Tipo de pintura</span>
                                 </label>
-                                <input type="text" name="tipo_pintura" placeholder="Escriba el tipo de pintura" maxlength="255" class="input input-bordered" />
+                                <input type="text" name="trabajos[0][tipo_pintura]" placeholder="Escriba el tipo de pintura" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="ubicacion_estampados">
+                                <label class="label" for="trabajos[0][ubicacion_estampados]">
                                     <span class="label-text">Ubicación de estampados</span>
                                 </label>
-                                <input type="text" name="ubicacion_estampados" placeholder="Escriba la ubicación" maxlength="255" class="input input-bordered" />
+                                <input type="text" name="trabajos[0][ubicacion_estampados]" placeholder="Escriba la ubicación" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="tamanio">
+                                <label class="label" for="trabajos[0][tamanio]">
                                     <span class="label-text">Tamaño</span>
                                 </label>
-                                <input type="text" name="tamanio" placeholder="Escribe el tamaño ej (grande)" maxlength="255" class="input input-bordered" />
+                                <input type="text" name="trabajos[0][tamanio]" placeholder="Escribe el tamaño ej (grande)" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="cantidad_estampados">
+                                <label class="label" for="trabajos[0][cantidad_estampados]">
                                     <span class="label-text">Cantidad de estampados</span>
                                 </label>
-                                <input type="number" name="cantidad_estampados" placeholder="Escriba la cantidad" maxlength="255" class="input input-bordered" />
+                                <input type="number" name="trabajos[0][cantidad_estampados]" placeholder="Escriba la cantidad" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="cantidad_prendas">
+                                <label class="label" for="trabajos[0][cantidad_prendas]">
                                     <span class="label-text">Cantidad de prendas</span>
                                 </label>
-                                <input type="number" name="cantidad_prendas" placeholder="Escriba la cantidad" maxlength="255" class="input input-bordered" />
+                                <input type="number" name="trabajos[0][cantidad_prendas]" placeholder="Escriba la cantidad" maxlength="255" class="input input-bordered" />
                             </div>
 
                             <div class="form-control">
-                                <label class="label" for="tipo_prendas">
+                                <label class="label" for="trabajos[0][tipo_prendas]">
                                     <span class="label-text">Tipo de prendas</span>
                                 </label>
-                                <input type="text" name="tipo_prendas" placeholder="Escriba el tipo de prendas" maxlength="255" class="input input-bordered" />
+                                <input type="text" name="trabajos[0][tipo_prendas]" placeholder="Escriba el tipo de prendas" maxlength="255" class="input input-bordered" />
                             </div>
                         </div>
                     </div>
                     <div class="form-control mt-6">
-                        <button class="btn btn-primary" id="add-trabajo">Añadir trabajo</button>
-                        <button class="btn btn-primary mt-4">Crear Orden de trabajo</button>
+                        <button type="button" class="btn btn-primary" id="add-trabajo">Añadir trabajo</button>
+                        <button type="submit" class="btn btn-primary mt-4">Crear Orden de trabajo</button>
                         <a href="{{ route('ordenestrabajos.index') }}" class="btn btn-outline btn-primary mt-4">Cancelar</a>
                     </div>
                 </form>
@@ -112,7 +134,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const trabajoCampos = [
-            { for:'logotipo', span:'Logotipo', placeholder: 'Escribe el logotipo', type: 'text' },
+            { for: 'logotipo', span:'Logotipo', placeholder: 'Escribe el logotipo', type: 'text' },
             { for: 'cantidad_colores', span:'Cantidad de colores', placeholder: 'Escribe la cantidad', type: 'number' },
             { for: 'colores', span: 'Colores', placeholder: 'Escibe los colores', type: 'text' },
             { for: 'tipo_pintura', span: 'Tipo de pintura', placeholder: 'Tipos de pintura', type: 'text' },
@@ -124,6 +146,7 @@
         ];
 
         let trabajoIndex = 2;
+        let iArrayTrabajo = 1;
         document.querySelector('#add-trabajo').addEventListener('click', (e) => {
             e.preventDefault();
             const trabajosDiv = document.querySelector("#form-trabajos");
@@ -145,7 +168,7 @@
                 
                 let label = document.createElement('label');
                 label.classList.add('label');
-                label.htmlFor = campo.for;
+                label.htmlFor = `trabajos[${iArrayTrabajo}][${campo.for}]`;
 
                 let span = document.createElement('span');
                 span.classList.add('label-text');
@@ -154,7 +177,7 @@
 
                 let input = document.createElement('input');
                 input.type = campo.type;
-                input.name = campo.for;
+                input.name = `trabajos[${iArrayTrabajo}][${campo.for}]`;
                 input.placeholder = campo.placeholder;
                 input.maxLength = 255;
                 input.classList.add('input');
@@ -170,6 +193,7 @@
 
             trabajosDiv.appendChild(nuevoTrabajoDiv);
             trabajoIndex++;
+            iArrayTrabajo++;
 
         });
     });

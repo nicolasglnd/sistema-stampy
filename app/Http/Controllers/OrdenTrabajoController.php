@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\OrdenTrabajo;
+use App\Models\Trabajo;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
 class OrdenTrabajoController extends Controller
@@ -28,7 +30,8 @@ class OrdenTrabajoController extends Controller
      */
     public function create()
     {
-        return view('ordenes_trabajos.create');
+        $clientes = Cliente::all();
+        return view('ordenes_trabajos.create', compact('clientes'));
     }
 
     /**
@@ -36,7 +39,31 @@ class OrdenTrabajoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // Validar la solicitud
+        $request->validate([
+            'total_cantidad_prendas' => 'required|integer',
+            'total_cantidad_estampados' => 'required|integer'
+        ]);
+
+        //orden
+        $orden = OrdenTrabajo::create($request->only([
+            'total_cantidad_estampados',
+            'total_cantidad_prendas',
+            'id_cliente',
+            'descripcion'
+        ]));
+
+        //trabajos
+        if ($request->has('trabajos')) {
+            foreach ($request->trabajos as $trabajoDatos) {
+                $trabajo = new Trabajo($trabajoDatos);
+                $trabajo->id_orden_trabajo = $orden->id;
+                $trabajo->save();
+            }
+        }
+
+        return redirect()->route('ordenestrabajos.index')->with('success', 'La orden de trabajo con todos sus trabajos correpondientas han sido guardados correctamente');
     }
 
     /**
