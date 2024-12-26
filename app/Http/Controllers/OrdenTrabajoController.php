@@ -69,7 +69,7 @@ class OrdenTrabajoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OrdenTrabajo $ordenTrabajo)
+    public function show(OrdenTrabajo $orden)
     {
         //
     }
@@ -77,15 +77,16 @@ class OrdenTrabajoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OrdenTrabajo $ordenTrabajo)
+    public function edit(OrdenTrabajo $ordenestrabajo)
     {
-        //
+        $clientes = Cliente::all();
+        return view('ordenes_trabajos.edit', ['orden' => $ordenestrabajo, 'clientes' => $clientes]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OrdenTrabajo $ordenTrabajo)
+    public function update(Request $request, OrdenTrabajo $orden)
     {
         //
     }
@@ -93,7 +94,7 @@ class OrdenTrabajoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OrdenTrabajo $ordenTrabajo)
+    public function destroy(OrdenTrabajo $orden)
     {
         //
     }
