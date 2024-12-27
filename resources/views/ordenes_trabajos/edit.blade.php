@@ -55,71 +55,73 @@
                     </div>
 
                     <div id="form-trabajos">
-                        <div class="trabajo">
-                            <h2 class="text-center font-semibold m-4 uppercase">Trabajo 1</h2>
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][logotipo]">
-                                    <span class="label-text">Logotipo</span>
-                                </label>
-                                <input type="text" name="trabajos[0][logotipo]" placeholder="Escriba el logotipo" maxlength="255" class="input input-bordered" />
-                            </div>
+                        @foreach($orden->trabajos as $index => $trabajo)
+                            <div class="trabajo">
+                                <h2 class="text-center font-semibold m-4 uppercase">Trabajo {{ $index + 1 }}</h2>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][logotipo]">
+                                        <span class="label-text">Logotipo</span>
+                                    </label>
+                                    <input type="text" name="trabajos[{{ $index }}][logotipo]" placeholder="Escriba el logotipo" maxlength="255" value="{{ $trabajo->logotipo }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][cantidad_colores]">
-                                    <span class="label-text">Cantidas de colores</span>
-                                </label>
-                                <input type="number" name="trabajos[0][cantidad_colores]" placeholder="cantida de colores" maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][cantidad_colores]">
+                                        <span class="label-text">Cantidas de colores</span>
+                                    </label>
+                                    <input type="number" name="trabajos[{{ $index }}][cantidad_colores]" placeholder="cantida de colores" maxlength="255" value="{{ $trabajo->cantidad_colores }}"class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][colores]">
-                                    <span class="label-text">Colores (separelos con una coma (,))</span>
-                                </label>
-                                <input type="text" name="trabajos[0][colores]" placeholder="Escriba los colores " maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][colores]">
+                                        <span class="label-text">Colores (separelos con una coma (,))</span>
+                                    </label>
+                                    <input type="text" name="trabajos[{{ $index }}][colores]" placeholder="Escriba los colores " maxlength="255" value="{{ $trabajo->colores }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][tipo_pintura]">
-                                    <span class="label-text">Tipo de pintura</span>
-                                </label>
-                                <input type="text" name="trabajos[0][tipo_pintura]" placeholder="Escriba el tipo de pintura" maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][tipo_pintura]">
+                                        <span class="label-text">Tipo de pintura</span>
+                                    </label>
+                                    <input type="text" name="trabajos[{{ $index }}][tipo_pintura]" placeholder="Escriba el tipo de pintura" maxlength="255" value="{{ $trabajo->tipo_pintura }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][ubicacion_estampados]">
-                                    <span class="label-text">Ubicación de estampados</span>
-                                </label>
-                                <input type="text" name="trabajos[0][ubicacion_estampados]" placeholder="Escriba la ubicación" maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][ubicacion_estampados]">
+                                        <span class="label-text">Ubicación de estampados</span>
+                                    </label>
+                                    <input type="text" name="trabajos[{{ $index }}][ubicacion_estampados]" placeholder="Escriba la ubicación" maxlength="255" value="{{ $trabajo->ubicacion_estampados }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][tamanio]">
-                                    <span class="label-text">Tamaño</span>
-                                </label>
-                                <input type="text" name="trabajos[0][tamanio]" placeholder="Escribe el tamaño ej (grande)" maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][tamanio]">
+                                        <span class="label-text">Tamaño</span>
+                                    </label>
+                                    <input type="text" name="trabajos[{{ $index }}][tamanio]" placeholder="Escribe el tamaño ej (grande)" maxlength="255" value="{{ $trabajo->tamanio }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][cantidad_estampados]">
-                                    <span class="label-text">Cantidad de estampados</span>
-                                </label>
-                                <input type="number" name="trabajos[0][cantidad_estampados]" placeholder="Escriba la cantidad" maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][cantidad_estampados]">
+                                        <span class="label-text">Cantidad de estampados</span>
+                                    </label>
+                                    <input type="number" name="trabajos[{{ $index }}][cantidad_estampados]" placeholder="Escriba la cantidad" maxlength="255" value="{{ $trabajo->cantidad_estampados }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][cantidad_prendas]">
-                                    <span class="label-text">Cantidad de prendas</span>
-                                </label>
-                                <input type="number" name="trabajos[0][cantidad_prendas]" placeholder="Escriba la cantidad" maxlength="255" class="input input-bordered" />
-                            </div>
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][cantidad_prendas]">
+                                        <span class="label-text">Cantidad de prendas</span>
+                                    </label>
+                                    <input type="number" name="trabajos[{{ $index }}][cantidad_prendas]" placeholder="Escriba la cantidad" maxlength="255" value="{{ $trabajo->cantidad_prendas }}" class="input input-bordered" />
+                                </div>
 
-                            <div class="form-control">
-                                <label class="label" for="trabajos[0][tipo_prendas]">
-                                    <span class="label-text">Tipo de prendas</span>
-                                </label>
-                                <input type="text" name="trabajos[0][tipo_prendas]" placeholder="Escriba el tipo de prendas" maxlength="255" class="input input-bordered" />
+                                <div class="form-control">
+                                    <label class="label" for="trabajos[{{ $index }}][tipo_prendas]">
+                                        <span class="label-text">Tipo de prendas</span>
+                                    </label>
+                                    <input type="text" name="trabajos[{{ $index }}][tipo_prendas]" placeholder="Escriba el tipo de prendas" maxlength="255" value="{{ $trabajo->tipo_prendas }}" class="input input-bordered" />
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="form-control mt-6">
                         <button type="button" class="btn btn-primary" id="add-trabajo">Añadir trabajo</button>

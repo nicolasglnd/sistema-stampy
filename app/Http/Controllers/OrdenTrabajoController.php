@@ -80,7 +80,12 @@ class OrdenTrabajoController extends Controller
     public function edit(OrdenTrabajo $ordenestrabajo)
     {
         $clientes = Cliente::all();
-        return view('ordenes_trabajos.edit', ['orden' => $ordenestrabajo, 'clientes' => $clientes]);
+        $trabajos = $ordenestrabajo->trabajos;
+        return view('ordenes_trabajos.edit', [
+            'orden' => $ordenestrabajo,
+            'clientes' => $clientes,
+            'trabajos' => $trabajos
+        ]);
     }
 
     /**
