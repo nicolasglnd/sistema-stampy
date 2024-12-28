@@ -54,7 +54,7 @@
                         </div>
                     </div>
 
-                    <div id="form-trabajos">
+                    <div id="form-trabajos" data-trabajo-index="{{ count($orden->trabajos) }}">
                         @foreach($orden->trabajos as $index => $trabajo)
                             <div class="trabajo">
                                 <h2 class="text-center font-semibold m-4 uppercase">Trabajo {{ $index + 1 }}</h2>
@@ -134,3 +134,4 @@
     </div>
 
 @endsection
+<script src="{{ asset('js/trabajos.js') }}"></script>
