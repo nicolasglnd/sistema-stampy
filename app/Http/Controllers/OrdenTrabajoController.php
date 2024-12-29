@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
+
 use App\Models\OrdenTrabajo;
 use App\Models\Trabajo;
 use App\Models\Cliente;
@@ -91,9 +93,38 @@ class OrdenTrabajoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OrdenTrabajo $orden)
+    public function update(Request $request, OrdenTrabajo $ordenestrabajo)
     {
-        //
+        //validar
+
+
+        //orden
+        $ordenestrabajo->update($request->only([
+            'total_cantidad_estampados',
+            'total_cantidad_prendas',
+            'id_cliente',
+            'descripcion'           
+        ]));
+
+        //trabajos
+        foreach($request->trabajos as $trabajoDatos) {
+            $trabajoDatos['id_orden_trabajo'] = $ordenestrabajo->id;
+            $trabajoId = $trabajoDatos['id'] ?? null;
+
+            if ($trabajoId) {
+                $trabajo = Trabajo::find($trabajoId);
+
+                if ($trabajo) {
+                    $trabajo->update($trabajoDatos);
+                }
+            }
+            else {
+                $trabajo = new Trabajo($trabajoDatos);
+                $trabajo->save();
+            }
+        }
+        
+        return redirect()->route('ordenestrabajos.index')->with('success', 'La orden de trabajo con todos sus trabajos correpondientas han sido actualizados correctamente');
     }
 
     /**
