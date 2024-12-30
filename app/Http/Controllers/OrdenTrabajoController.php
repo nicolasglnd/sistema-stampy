@@ -130,8 +130,11 @@ class OrdenTrabajoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OrdenTrabajo $orden)
+    public function destroy(OrdenTrabajo $ordenestrabajo)
     {
         //
+        $ordenestrabajo->delete();
+
+        return redirect()->route('ordenestrabajos.index')->with('success', 'La orden de trabajo con todos sus trabajos correpondientas han sido eliminados correctamente');
     }
 }
