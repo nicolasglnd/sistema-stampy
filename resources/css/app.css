@@ -5,3 +5,7 @@
 .w-small {
     width: 5rem;
 }
+
+.card-normal-size {
+    max-height: 532px;;
+}

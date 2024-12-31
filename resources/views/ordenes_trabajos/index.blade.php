@@ -14,7 +14,7 @@
     <div id="index-orden" class="flex flex-wrap justify-center gap-4 m-4 ">
 
         @foreach($ordenes as $orden)
-            <div class="card bg-primary text-primary-content w-96 shadow-x1 m-8 p-4">
+            <div class="card bg-primary text-primary-content w-96 shadow-x1 m-8 p-4 card-normal-size">
                 <div class="card-body">
                     @php
                         $primerNombre = $orden->cliente->persona->primer_nombre;
@@ -80,6 +80,11 @@
 
         toggles.forEach(toggle => {
             toggle.addEventListener('change', function() {
+
+                //obtener la card y realizar el toggle de la clase
+                const card = this.closest('.card');
+                card.classList.toggle('card-normal-size', !this.checked);
+
                 const trabajosId = this.id.replace('orden-', 'trabajos-');
                 const trabajosDiv = document.getElementById(trabajosId);
 
