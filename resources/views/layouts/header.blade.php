@@ -12,9 +12,9 @@
                 <li><a href="{{ route('empleados.index') }}">Empleado</a></li>
                 <li><a href="{{ route('clientes.index') }}">Cliente</a></li>
                 <li><a href="{{-- route('pantallas.index') --}}">Pantalla seigrafica</a></li>
-                <li><a href="{{-- route('ordenes.index') --}}">Orden de trabajo</a></li>
+                <li><a href="{{-- route('ordenestrabajos.index') --}}">Orden de trabajo</a></li>
                 <li><a href="{{-- route('facturas.index') --}}">Factura Electronica</a></li>
-                <li><a href="{{-- route('costos.index') --}}">Costos finales</a></li>
+                <li><a href="{{-- route('costosfinales.index') --}}">Costos finales</a></li>
                 <li><a href="{{-- route('documentacion.index') --}}">Documentación</a></li>
                 <li><a href="{{-- route('tutoriales.index') --}}">Tutoriales del Sistema</a></li>
                 <li><a href="{{-- route('dashboard.index') --}}">Dashboard</a></li>
@@ -37,7 +37,7 @@
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Pantalla serigrafica</a>
                     <a href="{{ route('ordenestrabajos.index') }}" class="block px-4 py-2 hover:bg-gray-200">Orden de trabajo</a>
                     <a href="" class="block px-4 py-2 hover:bg-gray-200">Factura Electronica</a>
-                    <a href="" class="block px-4 py-2 hover:bg-gray-200">Costos finales</a>
+                    <a href="{{ route('costosfinales.index') }}" class="block px-4 py-2 hover:bg-gray-200">Costos finales</a>
                 </div>
             </li>
             <li class="relative">

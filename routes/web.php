@@ -7,6 +7,7 @@ use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\OrdenTrabajoController;
+use App\Http\Controllers\CostosFinalesController;
 
 
 Route::view('/','welcome')->name('home');
@@ -16,6 +17,7 @@ Route::resource('/empleados', EmpleadoController::class)->middleware('auth');
 Route::resource('/clientes', ClienteController::class)->middleware('auth');
 Route::resource('/ordenestrabajos', OrdenTrabajoController::class)->middleware('auth');
 Route::get('ordenestrabajos/{id}/trabajos', [OrdenTrabajoController::class, 'trabajos'])->middleware('auth');
+Route::resource('/costosfinales', CostosFinalesController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('welcome');

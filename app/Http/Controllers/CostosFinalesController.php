@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CostosFinales;
+use App\Models\CostoFinal;
+use App\Models\OrdenTrabajo;
 use Illuminate\Http\Request;
 
 class CostosFinalesController extends Controller
@@ -12,7 +13,8 @@ class CostosFinalesController extends Controller
      */
     public function index()
     {
-        //
+        $costos = CostoFinal::with('orden')->get();
+        return view('costos_finales.index', compact('costos'));
     }
 
     /**
