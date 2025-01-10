@@ -22,7 +22,8 @@ class CostosFinalesController extends Controller
      */
     public function create()
     {
-        //
+        $ordenes = OrdenTrabajo::with('trabajos')->get();
+        return view('costos_finales.create', compact('ordenes'));
     }
 
     /**
