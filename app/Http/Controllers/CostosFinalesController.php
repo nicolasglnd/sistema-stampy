@@ -13,7 +13,7 @@ class CostosFinalesController extends Controller
      */
     public function index()
     {
-        $costos = CostoFinal::with('orden')->get();
+        $costos = CostoFinal::with('ordentrabajo')->get();
         return view('costos_finales.index', compact('costos'));
     }
 

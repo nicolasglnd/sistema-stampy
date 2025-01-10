@@ -19,6 +19,7 @@ class CostoFinal extends Model
         'costo_grabados',
         'costo_estampados',
         'id_cliente',
+        'costo_total'
     ];
 
     public function ordenTrabajo() {
